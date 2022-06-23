@@ -1,3 +1,13 @@
+const thistotallydoesnothing = process.env['token']
+const express = require('express')
+const app = express();
+const port = 3000
+
+app.get('/', (req, res) => res.send('Your Bots Is Online!!!'))
+
+app.listen(port, () =>
+console.log(`Your app is listening a http://localhost:${port}`)
+);
 const Discord = require("discord.js");
 const { Client, Message, MessageEmbed, Collection } = require("discord.js");
 const colors = require("colors");
@@ -33,11 +43,7 @@ mongoose
     useCreateIndex: true,
   })
   .then(console.log(
-    `
-    ..............................................................................
-    ........................ Mongo DB Connected ..................................
-    ..............................................................................
-    `
+    `-- Mongo DB Connected --`
   ));
 
 
@@ -68,6 +74,6 @@ function requirehandlers() {
 } requirehandlers();
 
 
-client.login(config.token);
+client.login(thistotallydoesnothing);
 
 module.exports.requirehandlers = requirehandlers;
