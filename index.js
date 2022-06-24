@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
   res.send('WebUI')
 });
 app.listen(port, () =>
-console.log(`WebUI is listening at http://localhost:${port}`)
+console.log(`WebUI is listening on port ${port}`)
 );
 const Discord = require("discord.js");
 const { Client, Message, MessageEmbed, Collection } = require("discord.js");
@@ -59,6 +59,7 @@ dbs(client);
 
 // Global Variables
 client.commands = new Collection();
+client.slashCommands = new Collection();
 client.aliases = new Collection();
 client.events = new Collection();
 client.cooldowns = new Collection();
