@@ -15,7 +15,7 @@ client.on('ready',  async() => {
     const status = random[0]
     const mode = random[1]
     client.user.setActivity(status, {type: mode})
-    }, 5000)
+    }, 7500)
     
 })
 
