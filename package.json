@@ -1,9 +1,10 @@
 {
-  "name": "actinium-advanced-bot",
+  "name": "incognito-bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@discordjs/builders": "^0.14.0",
     "@discordjs/opus": "^0.5.3",
     "@discordjs/voice": "^0.6.0",
     "ascii-table": "0.0.9",

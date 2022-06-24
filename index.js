@@ -1,12 +1,14 @@
-const thistotallydoesnothing = process.env['token']
+const logintoken = process.env['token']
+const mongoURL = process.env['mongourl']
 const express = require('express')
 const app = express();
 const port = 3000
-
-app.get('/', (req, res) => res.send('Your Bots Is Online!!!'))
-
+app.use(express.static('webui'))
+app.get('/', (req, res) => {
+  res.send('WebUI')
+});
 app.listen(port, () =>
-console.log(`Your app is listening a http://localhost:${port}`)
+console.log(`WebUI is listening at http://localhost:${port}`)
 );
 const Discord = require("discord.js");
 const { Client, Message, MessageEmbed, Collection } = require("discord.js");
@@ -36,7 +38,7 @@ module.exports = client;
 
 const mongoose = require("mongoose");
 mongoose
-  .connect(config.mongo, {
+  .connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -74,6 +76,6 @@ function requirehandlers() {
 } requirehandlers();
 
 
-client.login(thistotallydoesnothing);
+client.login(logintoken);
 
-module.exports.requirehandlers = requirehandlers;
+module.exports.requirehandlers = requirehandlers
