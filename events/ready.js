@@ -9,6 +9,7 @@ const config = require('../config/config.json')
 
 
 client.on('ready',  async() => {
+  console.log("EEEEE")
   // Random status messages
 
 /**
@@ -23,11 +24,11 @@ client.on('ready',  async() => {
     const random = statusArray[Math.floor(Math.random() * statusArray.length)].split(', ')
     const status = random[0]
     const mode = random[1]
-    client.user.setActivity(status, {type: mode})
+    client.user.setActivity("HOLY UNBLOCKER ", {type: mode})
+      // client.user.setActivity(status, {type: mode})
     console.log("INFO: Status changed to: " + mode + " " + status)
     }, 120000)
     
-})
-
+})
 
 
